@@ -1,0 +1,60 @@
+If you go down the manual route. Following are the steps to install Asterisk:
+
+Install Ubuntu
+Network Adapter from NAT to Bridge
+
+cd /usr/src
+wget http://downloads.asterisk.org/pub/telephony/certified-asterisk/asterisk-certified-16.8-current.tar.gz
+tar -zxvf asterisk-certified-16.8-current.tar.gz
+cd asterisk-certified-16.8-cert8
+
+sudo su
+apt install build-essential
+apt install libxml2-dev
+apt install libncurses5-dev libreadline-dev libreadline6-dev
+apt install libssl-dev
+apt install uuid-dev
+apt install libjansson-dev
+apt install libsqlite3-dev
+apt install pkg-config
+apt-get install -y libedit-dev
+
+/*
+At this point we need to select the SIP library we are going to use in Asterisk. SIP is basically VoIP protocol that we MUST have in asterisk. 
+Version 13 of Asterisk is a little awkward because it can use either “PJSIP” (a 3rd party library) or it’s native built in SIP library.
+The Asterisk team is encouraging people to use “PJSIP” instead of the native SIP library, so in Asterisk 13 PJSIP is the default library, but on
+Ubuntu 14 PJSIP must be installed and compiled from source.
+*/
+
+Install PJSIP:
+cd /usr/src
+wget https://codeload.github.com/pjsip/pjproject/tar.gz/2.10
+tar -xvf 2.10
+cd pjproject-2.10
+./configure --prefix=/usr --enable-shared --disable-sound --disable-resample --disable-video --disable-opencore-amr CFLAGS='-O2 -DNDEBUG'
+make dep && make && make install 
+ldconfig
+
+
+Go back to your asterisk directory and “./configure” then continue to then continue to compile & install instructions.
+
+cd ../certified-asterisk-13.1-cert2/
+./configure
+
+Compile and Install Asterisk:
+make
+make install
+makes samples 
+make config
+
+
+Start asterisk service:
+/etc/init.d/asterisk start
+
+Connect to asterisk cli:
+asterisk -rvvvvvvvv
+
+Restart asterisk:
+asterisk -rvvvvvvvv
+core restart now 
+
