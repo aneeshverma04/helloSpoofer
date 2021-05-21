@@ -1,0 +1,13 @@
+To spoof a call, we need to implement VoIP first.
+Basically we need 3 major things: PBX, SIP Trunk and a Softphone.
+
+1. Any PBX will work, generally asterisk is used.
+
+2. The issue comes when finding a SIP Provider. 
+Earlier goTrunk was used but now they have changed their server to not obey the "CALLERID=" command from Asterisk, disabling caller ID spoofing.
+There are many paid ones that work like VoIP.ms, Flowroute etc. But we need to find a free SIP Trunk that does not report DID verified status so 
+the reciever's SIP trunk just has no clue it's a fake number and accepts the call.
+After days of searching, luckily I found a free SIP provider. I am providing the details with the hope that it won't be exploited and people will use it for knowledge purposes
+only. It is called "ringplan".
+
+3. Any softphone like xlite, zoiper, linphone, microsip can be used.
