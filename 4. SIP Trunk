@@ -1,0 +1,48 @@
+As said earlier we will be using ringplan as a SIP Trunk.
+
+Make an account on ringplan. The phone number you give will appear as caller id to other person unless you mask it using PBX. No phone verification is there so no problems.
+After doing the initial settings, goto extensions> show QR code.
+With QR code you can use the mobile app to make calls.
+OR use the following details to enter in PBX or PBX configured softphone.
+Server address	
+Server user	
+Password	
+Proxy	
+
+In microsip you can just enter these details and VIOLA!! you are done.
+Enter:
+SIP Server as Server address
+SIP Proxy as Proxy
+Username as Server user
+Domain as SIP Server
+Login as Server user
+Password as Password.
+
+You can now make VoIP calls.
+
+Process is even easier in Zoiper.
+
+If doing manually using asterisk you need to enter these details in sip.conf inside Asterisk folder. Please take help of someone you know in VoIP for configurations or follow
+VoIP forums.
+Example configuration:
+
+[sip trunk]
+username=[Server User]
+type=peer
+secret=[Password]
+qualify=yes
+nat=force_rport
+host=[SIP Server]
+dtmfmode=rfc2833
+canreinvite=no
+disallow=all
+allow=g722
+allow=ulaw
+insecure=port,invite
+
+You will also need to configure the registration string and outbound proxy.
+
+Again I was unsuccessful in opening the 5060 port so I am not sure if the configurations I did in sip.conf and extenions.conf is correct. If you donot face port problem, you can
+follow the forums. You will find a lot of sample configurations.
+
+
