@@ -1,0 +1,32 @@
+VoIP(Voice Over Internet Protocol) is the core concept behind Call Spoofing.
+
+In traditional POTS(Plain old telephone system) caller id is passed using FSK(Frequency shift keying) during the first and 2nd rings of a call.
+In mobile phones or normal caller id phones, FSK is done by telephone providers.
+
+However in Business phone systems or VOIP phone systems responsibility of caller id lies on who initiated the call and not the one who receives it. Therefore easy to spoof.
+These VOIP systems are given access to the PRI(Primary Rate Interface) for telephony network. Instead of FSK been done by telephone providers it is done by PBX(Private Branch Exchange),
+basically the person who is making the outbound call.
+
+There are several reasons for making PBX incharge including: 
+DID(Direct Inward Dialing) = assigning every single VOIP phone its own legitimate phone number. So e.g., for an employee making a sales call, the company's phone number will
+appear on customer's caller ID, rather than employee's DID number.
+
+Now anyone can get access to PRI very cheaply through a VOIP provider and run a free and open source PBX system like Asterisk.
+
+IMPORTANT TERMINOLOGIES:
+1. PBX (Private Branch Exchange) = A private telephone network, used within a company or an organization. e.g., ASTERISK, 3CX etc.
+2. DISA (Direct Inward System Access) = This is sort of like VPN’ing to your internal system, so you can dial internal extensions.
+3. DID (Direct Inward Dialing) = This is the telephone number assigned by your service provider. Analogous to an external IP address, but for telephony.
+4. Trunk = In the PSTN/PBX world, there are two kinds of lines: local loop vs trunk. A local loop is what runs between the telco central office and your house,
+           and it can only carry one call at a time (2 if you had call waiting, but only one at a time). A trunk is a digital circuit (T1 or E1 PRI) that can carry
+           multiple calls at one time using TDM (time-division multiplexing). Trunks run between telco central offices and switching centers because it wouldn't be very 
+           efficient to have individual lines for every single call path.
+5. SIP (Session Initiation Protocol) = The standard for VoIP communication, and used for negotiations when making connections. It is a protocol used for defining communication 
+                                        between two endpoints.            
+6. SIP Trunk = A SIP trunk is a virtual trunk between two SIP enabled systems. It is used to send voice traffic from one system to another. It’s basically a virtual telephone
+                connection. It effectively creates a virtual ‘cable’ between a PBX and the  Public Switched Telephone Network (PSTN)                                        
+
+Asterisk is a software implementation of a private branch exchange (PBX).
+Don't worry if you cannot understand all these terminologies completely. Just have a vague idea what a PBX and a SIP Trunk is.
+
+Legality of Call Spoofing varies from country to country so please see the legal status before attempting anything.
