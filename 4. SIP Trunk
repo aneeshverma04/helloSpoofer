@@ -42,7 +42,7 @@ insecure=port,invite
 
 You will also need to configure the registration string and outbound proxy.
 
-Again I was unsuccessful in opening the 5060 port so I am not sure if the configurations I did in sip.conf and extenions.conf is correct. If you donot face port problem, you can
-follow the forums. You will find a lot of sample configurations.
+Again I was unsuccessful in opening the 5060 port so I am not sure if the configurations I did in sip.conf and extenions.conf is correct. If you don't face port problems,
+you can follow the forums. You will find a lot of sample configurations.
 
 
