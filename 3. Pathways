@@ -1,0 +1,17 @@
+ There are different ways of setting up the VoIP calls:
+ 1. Install Asterisk/Other_PBX in your linux distro and use a softphone.
+ 2. Install FreePBX VM in which Asterisk comes pre installed, do the settings and use a softphone.
+ 3. Use certain softphones like microsip and Zoiper in which no installation needs to be done, just enter your SIP Trunk details.(recommended)
+ 4. Use mobile apps of certain SIP providers where you just have to scan a QR or something like that.
+ 
+ I tried way 1, 2 and 3. 
+ Installing Asterisk certainly takes time and effort however port 5060 on which Asterisk runs is blocked most of the times. I changed IPTABLES settings, disabled firewall,
+ did everything i could but the port didn't open. If someone holds the key of opening the port hmu :) .
+ 
+ Installing FREEPBX was painfree and Asterisk comes preinstalled. There are numerous tutorials on youtube on how to configure FREEPBX after installing on youtube.
+ 
+ Choosing better softphones like microsip and zoiper will get the work done easily and efficiently. No need of suffering with installations or errors.
+ 
+ I was able to do spoof calling(to friends in US and Canada, because that's what my SIP Trunk allowed) without a problem with microsip.
+ 
+ 
